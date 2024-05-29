@@ -6,9 +6,9 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="338.0" prefWidth="92.0">
                <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                      <children>
                         <Label text="Boutons :" />
                         <Button mnemonicParsing="false" text="Bouton 1" />
@@ -20,9 +20,9 @@
                </children></HBox>
    </left>
    <center>
-      <VBox prefHeight="284.0" prefWidth="357.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="284.0" prefWidth="483.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane>
+            <GridPane alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -35,13 +35,13 @@
                <children>
                   <Label text="Name:" />
                   <Label text="Email:" GridPane.rowIndex="1" />
-                  <Label text="Password:" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER_RIGHT" text="Password:" GridPane.rowIndex="2" />
                   <TextField GridPane.columnIndex="1" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button mnemonicParsing="false" text="Submit" />
                   <Button mnemonicParsing="false" text="Cancel" />
