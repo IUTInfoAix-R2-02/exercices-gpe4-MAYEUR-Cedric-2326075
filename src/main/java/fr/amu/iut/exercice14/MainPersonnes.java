@@ -20,9 +20,47 @@ public class MainPersonnes {
 
         lesPersonnes = new SimpleListProperty<>(FXCollections.observableArrayList());
         ageMoyen = new SimpleIntegerProperty(0);
+        nbParisiens = new SimpleIntegerProperty(0);
+
+        calculAgeMoyen = new IntegerBinding() {
+            {
+                this.bind(lesPersonnes);
+            }
+
+            @Override
+            protected int computeValue() {
+                if (lesPersonnes.isEmpty()) return 0;
+                int sumAges = 0;
+                for (Personne p : lesPersonnes) {
+                    sumAges += p.getAge();
+                }
+                return sumAges / lesPersonnes.size();
+            }
+        };
+
+        ageMoyen.bind(calculAgeMoyen);
+
+        calculnbParisiens = new IntegerBinding() {
+            {
+                this.bind(lesPersonnes);
+            }
+
+            @Override
+            protected int computeValue() {
+                int count = 0;
+                for (Personne p : lesPersonnes) {
+                    if ("Paris".equals(p.getVilleDeNaissance())) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+        };
+
+        nbParisiens.bind(calculnbParisiens);
 
         question1();
-//        question2();
+        question2();
     }
 
     public static void question1() {
@@ -54,4 +92,3 @@ public class MainPersonnes {
     }
 
 }
-
